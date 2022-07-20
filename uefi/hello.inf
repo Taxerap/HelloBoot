@@ -1,0 +1,21 @@
+[Defines]
+    INF_VERSION = 0x0001001B
+    MODULE_TYPE = UEFI_APPLICATION
+    BASE_NAME = HelloBoot
+    FILE_GUID = 7F0838C9-C90A-4B83-BE98-99A59BD63087
+    VERSION_STRING = "Final"
+    ENTRY_POINT = Hello
+
+[Sources]
+    src/hello.c
+
+[BuildOptions]
+    MSFT:*_*_*_CC_FLAGS = /std:c17
+    GCC:*_*_*_CC_FLAGS = -std=c17
+
+[Packages]
+    MdePkg/MdePkg.dec
+
+[LibraryClasses]
+    UefiApplicationEntryPoint
+    UefiLib
